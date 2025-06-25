@@ -1,0 +1,7 @@
+"0","CV_AUDPC_1 <- agricolae::cv.model(PTD_AUDPC_1) %>% "
+"0","  round(digits = 2)"
+"0","CV_AUDPC_1"
+"1","[1]"
+"1"," 15.52"
+"1","
+"

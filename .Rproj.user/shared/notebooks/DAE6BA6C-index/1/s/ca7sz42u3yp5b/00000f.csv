@@ -1,0 +1,47 @@
+"0","library(gsheet) "
+"0","library(tidyverse) "
+"0","library(DT) "
+"0","library(patchwork) "
+"2","Aviso: pacote ‘patchwork’ foi compilado no R versão 4.4.3"
+"2","
+Anexando pacote: ‘patchwork’
+
+"
+"2","O seguinte objeto é mascarado por ‘package:MASS’:
+
+    area
+
+"
+"0","library(performance) "
+"2","Aviso: pacote ‘performance’ foi compilado no R versão 4.4.3"
+"0","library(emmeans)"
+"2","Welcome to emmeans.
+Caution: You lose important information if you filter this package's results.
+See '? untidy'
+"
+"0","library(DHARMa)"
+"2","Aviso: pacote ‘DHARMa’ foi compilado no R versão 4.4.3"
+"2","This is DHARMa 0.4.7. For overview type '?DHARMa'. For recent changes, type news(package = 'DHARMa')
+"
+"0","library(multcomp) "
+"2","Carregando pacotes exigidos: mvtnorm
+"
+"2","Carregando pacotes exigidos: survival
+"
+"2","Carregando pacotes exigidos: TH.data
+"
+"2","
+Anexando pacote: ‘TH.data’
+
+"
+"2","O seguinte objeto é mascarado por ‘package:MASS’:
+
+    geyser
+
+"
+"0","library(multcompView) "
+"0","library(epifitter)"
+"2","Aviso: pacote ‘epifitter’ foi compilado no R versão 4.4.3"
+"0","library(knitr)"
+"0","library(kableExtra)"
+"0","library(ggplot2)"

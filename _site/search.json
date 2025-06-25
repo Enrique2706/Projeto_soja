@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Projeto soja",
+    "section": "",
+    "text": "library(knitr)\nlibrary(ggplot2)\nlibrary(gsheet)\n\nWarning: pacote 'gsheet' foi compilado no R versão 4.4.3\n\nlibrary(ggthemes)\n\nWarning: pacote 'ggthemes' foi compilado no R versão 4.4.3\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ lubridate 1.9.4     ✔ tibble    3.2.1\n✔ purrr     1.0.2     ✔ tidyr     1.3.1\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(drc)\n\nWarning: pacote 'drc' foi compilado no R versão 4.4.3\n\n\nCarregando pacotes exigidos: MASS\n\nAnexando pacote: 'MASS'\n\nO seguinte objeto é mascarado por 'package:dplyr':\n\n    select\n\n\n'drc' has been loaded.\n\nPlease cite R and 'drc' if used for a publication,\nfor references type 'citation()' and 'citation('drc')'.\n\n\nAnexando pacote: 'drc'\n\nOs seguintes objetos são mascarados por 'package:stats':\n\n    gaussian, getInitial\n\nlibrary(kableExtra)\n\nWarning: pacote 'kableExtra' foi compilado no R versão 4.4.3\n\n\n\nAnexando pacote: 'kableExtra'\n\nO seguinte objeto é mascarado por 'package:dplyr':\n\n    group_rows\n\nlibrary(DT)\n\nWarning: pacote 'DT' foi compilado no R versão 4.4.3\n\nlibrary(leaflet)\n\nWarning: pacote 'leaflet' foi compilado no R versão 4.4.3"
+  },
+  {
+    "objectID": "index.html#carregamento-dos-pacotes",
+    "href": "index.html#carregamento-dos-pacotes",
+    "title": "Projeto soja",
+    "section": "",
+    "text": "library(knitr)\nlibrary(ggplot2)\nlibrary(gsheet)\n\nWarning: pacote 'gsheet' foi compilado no R versão 4.4.3\n\nlibrary(ggthemes)\n\nWarning: pacote 'ggthemes' foi compilado no R versão 4.4.3\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ lubridate 1.9.4     ✔ tibble    3.2.1\n✔ purrr     1.0.2     ✔ tidyr     1.3.1\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(drc)\n\nWarning: pacote 'drc' foi compilado no R versão 4.4.3\n\n\nCarregando pacotes exigidos: MASS\n\nAnexando pacote: 'MASS'\n\nO seguinte objeto é mascarado por 'package:dplyr':\n\n    select\n\n\n'drc' has been loaded.\n\nPlease cite R and 'drc' if used for a publication,\nfor references type 'citation()' and 'citation('drc')'.\n\n\nAnexando pacote: 'drc'\n\nOs seguintes objetos são mascarados por 'package:stats':\n\n    gaussian, getInitial\n\nlibrary(kableExtra)\n\nWarning: pacote 'kableExtra' foi compilado no R versão 4.4.3\n\n\n\nAnexando pacote: 'kableExtra'\n\nO seguinte objeto é mascarado por 'package:dplyr':\n\n    group_rows\n\nlibrary(DT)\n\nWarning: pacote 'DT' foi compilado no R versão 4.4.3\n\nlibrary(leaflet)\n\nWarning: pacote 'leaflet' foi compilado no R versão 4.4.3"
+  },
+  {
+    "objectID": "index.html#localização-dos-experimentos",
+    "href": "index.html#localização-dos-experimentos",
+    "title": "Projeto soja",
+    "section": "Localização dos Experimentos",
+    "text": "Localização dos Experimentos\n\n## plot do viveiro \nleaflet() |&gt;\n  addTiles() |&gt; \n  setView(lng = -42.8497 , lat = -20.7453, zoom = 16)"
+  },
+  {
+    "objectID": "index.html#importação-os-dados---germinação-de-uredósporos-gu",
+    "href": "index.html#importação-os-dados---germinação-de-uredósporos-gu",
+    "title": "Projeto soja",
+    "section": "Importação os dados - Germinação de Uredósporos (GU)",
+    "text": "Importação os dados - Germinação de Uredósporos (GU)\nOs dados utilizados nesta análise serão importados de uma planilha google sheet. Após importação, algumas colunas de dados serão transformados para fatores. O intuito é facilitar o desenvolvimento das análises.\n\nGU &lt;- gsheet2tbl(\"https://docs.google.com/spreadsheets/d/1zEsVt_nnmydEUBJjkyMrOLHEu6pXeM-SmwTXyEoNbmg/edit?gid=0#gid=0\")\n\nGU &lt;- GU %&gt;% \n  mutate(REPETICAO = as.factor(REPETICAO))\n\nhead(GU)\n\n# A tibble: 6 × 5\n   DOSE REPETICAO UREDOSPORO UREDOSPOROS_GERMINADOS TAXA_DE_GERMINAÇÃO\n  &lt;dbl&gt; &lt;fct&gt;          &lt;dbl&gt;                  &lt;dbl&gt;              &lt;dbl&gt;\n1   0   1                146                    104               71.2\n2   0   2                205                    137               66.8\n3   0   3                 67                     51               76.1\n4   0   4                347                    241               69.4\n5   2.5 1                252                     83               32.9\n6   2.5 2                193                     45               23.3"
+  },
+  {
+    "objectID": "index.html#cálculo-da-germinação-média",
+    "href": "index.html#cálculo-da-germinação-média",
+    "title": "Projeto soja",
+    "section": "Cálculo da Germinação Média",
+    "text": "Cálculo da Germinação Média\n\nGU2 &lt;- GU %&gt;% \n  group_by(DOSE) %&gt;%\n  summarise(mean_germ = mean(TAXA_DE_GERMINAÇÃO))%&gt;% \n  dplyr::mutate(inib = ((70.90-mean_germ)/70.90)*100) %&gt;% \n  round(digits = 2)\n\nhead(GU2)\n\n# A tibble: 6 × 3\n   DOSE mean_germ  inib\n  &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;\n1  0        70.9    0  \n2  2.5      26.9   62.0\n3  3.75      9.69  86.3\n4  5         6.08  91.4\n5  7.5       4.24  94.0\n6 10         3.64  94.9"
+  },
+  {
+    "objectID": "index.html#modelagem-da-ec50-modelo-não-linear",
+    "href": "index.html#modelagem-da-ec50-modelo-não-linear",
+    "title": "Projeto soja",
+    "section": "Modelagem da EC50 (modelo não-linear)",
+    "text": "Modelagem da EC50 (modelo não-linear)\nPara calcular a dose do produto que é capaz de inibir 50% da germinação dos uredósporos do patógeno faremos uso da função drm (pacote drc) modelando para em Log-logistico W1.4.\n\nEC &lt;- drm(mean_germ ~ DOSE,\n                 data = GU2,\n                 fct = W1.4())\nsummary(EC)\n\n\nModel fitted: Weibull (type 1) (4 parms)\n\nParameter estimates:\n\n               Estimate Std. Error t-value   p-value    \nb:(Intercept)  1.991112   0.189631 10.4999 0.0089489 ** \nc:(Intercept)  4.237743   0.575215  7.3672 0.0179302 *  \nd:(Intercept) 70.910037   0.849463 83.4763 0.0001435 ***\ne:(Intercept)  2.402485   0.050044 48.0073 0.0004336 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error:\n\n 0.8496181 (2 degrees of freedom)\n\n\n\nEC \n\n\nA 'drc' model.\n\nCall:\ndrm(formula = mean_germ ~ DOSE, data = GU2, fct = W1.4())\n\nCoefficients:\nb:(Intercept)  c:(Intercept)  d:(Intercept)  e:(Intercept)  \n        1.991          4.238         70.910          2.402  \n\n\n\nAIC(EC)\n\n[1] 18.47997"
+  },
+  {
+    "objectID": "index.html#cálculo-da-ec50",
+    "href": "index.html#cálculo-da-ec50",
+    "title": "Projeto soja",
+    "section": "Cálculo da EC50",
+    "text": "Cálculo da EC50\n\nED(EC, 50, interval = \"delta\")\n\n\nEstimated effective doses\n\n       Estimate Std. Error   Lower   Upper\ne:1:50  1.99856    0.06471 1.72014 2.27699\n\n\nCom base no modelo gerado anteriormente e na função ED, foi possível estimar que a dose do produto suficiente para inibir 50% da inibição dos uredósporos é de 1.99."
+  },
+  {
+    "objectID": "index.html#tabela-de-resultados",
+    "href": "index.html#tabela-de-resultados",
+    "title": "Projeto soja",
+    "section": "Tabela de Resultados",
+    "text": "Tabela de Resultados\n\ncolnames(GU2) = c('Dose', \"Germinação Média (%)\", \"Inibição da Germinação (%)\")\n\nkable(GU2,\n      align = \"ccc\")\n\n\n\n\nDose\nGerminação Média (%)\nInibição da Germinação (%)\n\n\n\n\n0.00\n70.90\n0.00\n\n\n2.50\n26.93\n62.01\n\n\n3.75\n9.69\n86.34\n\n\n5.00\n6.08\n91.42\n\n\n7.50\n4.24\n94.02\n\n\n10.00\n3.64\n94.86"
+  },
+  {
+    "objectID": "index.html#gráfico-de-dose-germinação",
+    "href": "index.html#gráfico-de-dose-germinação",
+    "title": "Projeto soja",
+    "section": "Gráfico de Dose ✕ Germinação",
+    "text": "Gráfico de Dose ✕ Germinação\n\nplot(EC,\n     xlab = Dose~(ml~L^-1),\n     ylab = \"Germinação média (%)\",\n     xt = c(\"0\", \"2.50\", \"3.75\", \"5\", \"7.5\", \"10\"),\n     ylim = c(0,100),\n     pch = 19,     \n     col = \"grey20\")"
+  },
+  {
+    "objectID": "index.html#carregamento-dos-pacotes-1",
+    "href": "index.html#carregamento-dos-pacotes-1",
+    "title": "Projeto soja",
+    "section": "Carregamento dos pacotes",
+    "text": "Carregamento dos pacotes\n\nlibrary(gsheet) \nlibrary(tidyverse) \nlibrary(DT) \nlibrary(patchwork) \n\nWarning: pacote 'patchwork' foi compilado no R versão 4.4.3\n\n\n\nAnexando pacote: 'patchwork'\n\n\nO seguinte objeto é mascarado por 'package:MASS':\n\n    area\n\nlibrary(performance) \n\nWarning: pacote 'performance' foi compilado no R versão 4.4.3\n\nlibrary(emmeans)\n\nWelcome to emmeans.\nCaution: You lose important information if you filter this package's results.\nSee '? untidy'\n\nlibrary(DHARMa)\n\nWarning: pacote 'DHARMa' foi compilado no R versão 4.4.3\n\n\nThis is DHARMa 0.4.7. For overview type '?DHARMa'. For recent changes, type news(package = 'DHARMa')\n\nlibrary(multcomp) \n\nCarregando pacotes exigidos: mvtnorm\n\n\nCarregando pacotes exigidos: survival\n\n\nCarregando pacotes exigidos: TH.data\n\n\n\nAnexando pacote: 'TH.data'\n\n\nO seguinte objeto é mascarado por 'package:MASS':\n\n    geyser\n\nlibrary(multcompView) \nlibrary(epifitter)\n\nWarning: pacote 'epifitter' foi compilado no R versão 4.4.3\n\nlibrary(knitr)\nlibrary(kableExtra)\nlibrary(ggplot2)"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  }
+]

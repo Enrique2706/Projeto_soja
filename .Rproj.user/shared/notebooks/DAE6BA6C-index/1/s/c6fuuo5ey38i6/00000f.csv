@@ -1,0 +1,2 @@
+"0","PTD_AUDPC_2 <- lm(audpc ~ TRATAMENTO + BLOCO,"
+"0","                data = PTD_E2)"

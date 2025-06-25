@@ -1,0 +1,7 @@
+"0","PTD_3 <- PTD %>%"
+"0","  dplyr::group_by (REPETIÇÃO, TRATAMENTO, BLOCO) %>% "
+"0","  summarise(audpc = AUDPC(DAE, SEVERIDADE)) %>% "
+"0","  dplyr::mutate(REPETIÇÃO = as.factor(REPETIÇÃO),"
+"0","                TRATAMENTO = as.factor(TRATAMENTO),"
+"0","                BLOCO = as.factor(BLOCO))"
+"2","`summarise()` has grouped output by 'REPETIÇÃO', 'TRATAMENTO'. You can override using the `.groups` argument."

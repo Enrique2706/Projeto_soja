@@ -1,0 +1,2 @@
+"0","PTD_E2 <- PTD_3 %>% "
+"0","  filter(REPETIÇÃO == 2)"
