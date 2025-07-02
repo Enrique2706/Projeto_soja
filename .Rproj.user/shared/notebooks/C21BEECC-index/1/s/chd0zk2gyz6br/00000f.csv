@@ -1,0 +1,4 @@
+"0","colnames(GU2) = c('Dose', ""Germinação Média (%)"", ""Inibição da Germinação (%)"")"
+"0",""
+"0","kable(GU2,"
+"0","      align = ""ccc"")"

@@ -1,0 +1,1 @@
+"0","qqnorm(residuals(EC), main = ""Q-Q Plot dos Resíduos"")"

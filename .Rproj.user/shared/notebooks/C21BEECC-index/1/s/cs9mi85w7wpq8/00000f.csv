@@ -1,0 +1,2 @@
+"0","PTD_AUDPC <- lm(audpc ~ TRATAMENTO*REPETIÇÃO + BLOCO,"
+"0","                data = PTD_3)"

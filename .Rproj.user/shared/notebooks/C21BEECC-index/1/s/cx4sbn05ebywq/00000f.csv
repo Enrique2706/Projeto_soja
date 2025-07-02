@@ -1,0 +1,21 @@
+"0","PTD_3 <- PTD %>%"
+"0","  dplyr::group_by (REPETIÇÃO, TRATAMENTO, BLOCO) %>% "
+"0","  summarise(audpc = AUDPC(DAE, SEVERIDADE)) %>% "
+"0","  dplyr::mutate(REPETIÇÃO = as.factor(REPETIÇÃO),"
+"0","                TRATAMENTO = as.factor(TRATAMENTO),"
+"0","                BLOCO = as.factor(BLOCO))"
+"1","[1m[33mError[39m in `summarise()`:[22m
+[38;5;255m[36mℹ[38;5;255m In argument: `audpc = AUDPC(DAE, SEVERIDADE)`.
+[36mℹ[38;5;255m In group 1: `REPETIÇÃO = 1`, `TRATAMENTO = ""Control""`, `BLOCO = 1`.[39m
+[1mCaused by error in `AUDPC()`:[22m
+[33m![39m não foi possível encontrar a função ""AUDPC""
+Backtrace:
+[90m  1. [39m... %>% ...
+[90m  4. [39m[1m[94mdplyr:::summarise.grouped_df([39m[22m., audpc = AUDPC(DAE, SEVERIDADE)[1m[94m)[39m[22m
+[90m  5. [39mdplyr:::summarise_cols(.data, dplyr_quosures(...), by, ""summarise"")
+[90m  7. [39mdplyr:::map(quosures, summarise_eval_one, mask = mask)
+[90m  8. [39m[1mbase[22m::lapply(.x, .f, ...)
+[90m  9. [39m[1mdplyr[22m (local) FUN(X[[i]], ...)
+[90m 10. [39mmask$eval_all_summarise(quo)
+[90m 11. [39m[1mdplyr[22m (local) eval()
+"
